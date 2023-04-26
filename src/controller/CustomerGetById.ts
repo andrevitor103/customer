@@ -1,17 +1,15 @@
 import { Request, Response } from "express"
-import { CustomerRepository } from "../model/repository/CustomerRepository"
-import { Uuid } from "../model/Uuid"
+import { CustomerGetByIdService } from "../services/CustomerGetByIdService"
 
 
 export class CustomerById {
 
-    constructor(readonly repository: CustomerRepository) {
+    constructor(readonly service: CustomerGetByIdService) {
     }
 
     async execute(request: Request, response: Response) {
-        let id: string|Uuid = request.params.id
-        id = new Uuid(id)
-        const customer = await this.repository.getById(id)
+        let id: string = request.params.id
+        const customer = await this.service.execute(id)
         response.status(200).json({customer})
     }
 }

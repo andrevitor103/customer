@@ -1,16 +1,14 @@
 import { Request, Response } from "express"
-import { CustomerRepository } from "../model/repository/CustomerRepository"
-import { Customer } from "../model/Customer"
+import { CustomerCreateService } from "../services/CustomerCreateService"
 
 export class CustomerCreate {
 
-    constructor(readonly repository: CustomerRepository) {
+    constructor(readonly service: CustomerCreateService) {
     }
 
     async execute(request: Request, response: Response) {
         const { name, document } = request.body
-        const customer = Customer.create(name, document)
-        await this.repository.save(customer)
+        const customer = await this.service.execute(name, document)
         response.status(201).json({customer})
     }
 }
