@@ -1,13 +1,13 @@
-# Projeto desenvolvido em curso no meu canal do yt: youtube.com/@andrevitor103
+Projeto desenvolvido em curso no meu canal do yt: youtube.com/@andrevitor103
 
-##Ferramentas utilizadas:
+Ferramentas utilizadas:
     - node: https://nodejs.org/en/download
     - xampp: https://www.apachefriends.org/pt_br/index.html
     - vscode: https://code.visualstudio.com/
     - postman: https://www.postman.com/
     - knex: https://knexjs.org/
 
-## Libs e configurações:
+Libs e configurações:
 npm init -y
 npm install typescript ts-node
 npx tsc --init
