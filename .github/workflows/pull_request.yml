@@ -27,8 +27,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '14'
-          cache: 'npm'
+          path: "app/node_modules"
       - run: cd customer-node
       - run: cd customer-node && npm install
       - run: cd customer-node && npm run test
