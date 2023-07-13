@@ -32,7 +32,6 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/customer-node/package-lock.json') }}
-
-      - name: Run unit tests
-        - run: cd customer-node
-        - run: npm install
+      - run: cd customer-node
+      - run: npm install
+      - run: npm run test
