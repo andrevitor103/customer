@@ -2,14 +2,11 @@
 
 namespace src\infra\repository\database;
 
-use RuntimeException;
 use src\controller\dto\input\CustomerUpdateDto;
 use src\controller\dto\output\CustomerOutput;
 use src\infra\repository\connection\Connection;
 use src\model\Customer;
 use src\model\repository\CustomerRepository;
-
-use function DI\create;
 
 final class CustomerRepositoryDatabase implements CustomerRepository {
 

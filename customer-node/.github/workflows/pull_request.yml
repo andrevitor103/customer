@@ -17,4 +17,4 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install dependencies
-        run: yarn install
+        run: npm install
