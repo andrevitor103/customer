@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: cd customer-node && npm install
 
-  test:
+  testing:
     name: Run unit test
     runs-on: ubuntu-latest
     steps:
