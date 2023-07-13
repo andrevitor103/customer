@@ -3,8 +3,8 @@ name: Pull Request
 on: [pull_request]
 
 jobs:
- install:
-    name: Installing Packages
+  testing:
+    name: Run unit test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,5 +16,5 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/customer-node/package-lock.json') }}
 
-      - name: Install dependencies
-        run: cd customer-node && npm install
+      - name: Run unit test
+        run: cd customer-node && npx jest
