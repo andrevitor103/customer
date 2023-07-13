@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           path: ${{ runner.os }}-${{ hashFiles('**/customer-node') }}
-          cache: '**/customer-node/npm'
+          cache: 'npm'
       - run: cd customer-node
       - run: cd customer-node && npm install
       - run: cd customer-node && npm run test
