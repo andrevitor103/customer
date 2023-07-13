@@ -17,4 +17,4 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/customer-node/package-lock.json') }}
 
       - name: Run unit test
-        run: cd customer-node && npm install
+        run: cd customer-node && npx jest
