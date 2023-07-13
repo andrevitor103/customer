@@ -17,4 +17,4 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/customer-node/package-lock.json') }}
 
       - name: Install dependencies
-        run: cd customer-nodes && npm install
+        run: cd customer-node && npm install
