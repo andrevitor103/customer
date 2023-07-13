@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          path: ${{ runner.os }}-${{ '**/customer-node' }}
+          path: ${{ runner.os }}-${{ hashFiles('**/customer-node/package-lock.json') }}
           cache: 'npm'
       - run: cd customer-node
       - run: cd customer-node && npm install
