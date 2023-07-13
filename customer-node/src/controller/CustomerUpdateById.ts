@@ -12,7 +12,9 @@ export class CustomerUpdateById {
     async execute(request: Request, response: Response) {
         const { id } = request.params
         const { name, document } = request.body
+        
         const customer = await this.service.execute(id, name, document)
+
         response.status(200).json({customer})
     }
 }

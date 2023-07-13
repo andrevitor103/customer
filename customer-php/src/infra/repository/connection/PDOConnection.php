@@ -17,4 +17,8 @@ final class PDOConnection implements Connection {
             throw $e;
         }
     }
+
+    public function query() {
+        
+    }
 }
