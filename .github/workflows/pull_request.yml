@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cache node_modules
+      - name: Cache customer-node/node_modules
         uses: actions/cache@v2
         with:
           path: node_modules
@@ -30,7 +30,7 @@ jobs:
       - name: Restore node_modules
         uses: actions/cache@v2
         with:
-          path: node_modules
+          path: customer-node/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/customer-node/package-lock.json') }}
 
       - name: Run unit tests
