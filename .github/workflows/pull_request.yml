@@ -30,7 +30,6 @@ jobs:
       - name: Restore node_modules
         uses: actions/cache@v2
         with:
-          path: node_modules
           cache: 'npm'
       - run: cd customer-node
       - run: cd customer-node && npm install
