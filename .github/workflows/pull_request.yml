@@ -3,7 +3,7 @@ name: Pull Request
 on: [pull_request]
 
 jobs:
-  testing:
+  install:
     name: Run unit test
     runs-on: ubuntu-latest
     steps:
@@ -17,20 +17,4 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/customer-node/package-lock.json') }}
 
       - name: Run unit test
-        run: cd customer-node && npm install
-  
- install:
-    name: Installing Packages
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/customer-node/package-lock.json') }}
-
-      - name: Install dependencies
         run: cd customer-node && npm install
