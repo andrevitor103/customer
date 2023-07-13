@@ -34,4 +34,4 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/customer-node/package-lock.json') }}
 
       - name: Run unit test
-        run: npm test
+        run: cd customer-node && npm test
