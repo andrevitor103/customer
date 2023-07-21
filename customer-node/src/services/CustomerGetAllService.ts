@@ -8,7 +8,11 @@ export class CustomerGetAllService {
     }
 
     async execute() {
-        const customerCollection = await this.repository.getAll()
-        return customerCollection
+        try {
+            const customerCollection = await this.repository.getAll()
+            return customerCollection
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
